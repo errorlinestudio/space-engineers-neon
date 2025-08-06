@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neon - Neurocity</title>
+  <style>
+    /* Style global et mise en page */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+    }
+    header {
+      background: #1a1a2e;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid #7289da;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #7289da;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+      color: #a0a0a0;
+    }
+    main, section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    main > pre {
+      background: #1a1a2e;
+      color: #9ab8ff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #7289daaa;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #7289da;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #7289da;
+      text-align: center;
+    }
+    /* Galerie images */
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img, .gallery video {
+      width: 300px;
+      height: 170px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #7289da99;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover, .gallery video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #7289dacc;
+    }
+    /* Formulaire */
+    form {
+      background: #1a1a2e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 480px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 0 15px #7289daaa;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #252540;
+      color: #e0e0e0;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #a0a0a0;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #7289da;
+      background: #30305a;
+    }
+    button {
+      background: #7289da;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    button:disabled {
+      background: #4a5a8a;
+      cursor: not-allowed;
+    }
+    button:hover:not(:disabled) {
+      background: #5a6ebd;
+    }
+    /* Message d'alerte */
+    #alertMsg {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #8fbc8f;
+      min-height: 1.5em;
+    }
+    /* Captcha label */
+    label[for="captchaAnswer"] {
+      color: #e0e0e0;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      display: block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Neon</h1>
+  <p>Map : Neurocity | Earthlike Mars Moon</p>
+  <nav style="margin-top: 1rem;">
+  <a href="index.html" style="text-decoration: none; color: #e0e0e0; background: #7289da; padding: 0.5rem 1rem; border-radius: 5px; margin: 0 0.5rem; font-weight: bold;">Accueil</a>
+  <a href="gallery.html" style="text-decoration: none; color: #e0e0e0; background: #7289da; padding: 0.5rem 1rem; border-radius: 5px; margin: 0 0.5rem; font-weight: bold;">Gallery</a>
+  <a href="videos.html" style="text-decoration: none; color: #e0e0e0; background: #7289da; padding: 0.5rem 1rem; border-radius: 5px; margin: 0 0.5rem; font-weight: bold;">Vidéos</a>
+</nav>
+
+</header>
+
+<section>
+  <h2>🏠 Bienvenue sur le serveur</h2>
+  <p>
+    Ce serveur Space Engineers est conçu pour une expérience équilibrée, rapide et fluide.
+    Que tu sois constructeur, explorateur ou ingénieur, tu trouveras ici un terrain adapté à ta créativité.
+  </p>
+  <p>
+    Rejoignez une communauté passionnée<br />
+    Ici, l’entraide et le partage sont au cœur de notre philosophie. Que tu sois débutant ou vétéran, tu pourras<br />
+    échanger conseils, astuces et projets avec d’autres joueurs motivés. Ensemble, bâtissons un univers dynamique et accueillant.
+  </p>
+  <p>  
+    Un serveur toujours à jour<br />
+    Nous maintenons régulièrement le serveur à jour avec les dernières versions et mods pour garantir une expérience stable et enrichie.
+  </p>
+  <p>
+    Des événements réguliers<br />
+    Participez à des événements spéciaux, défis et concours organisés pour pimenter votre expérience et gagner des récompenses uniques.
+  </p>
+  <p>
+    Une gestion optimisée des performances<br />
+    Le serveur est configuré pour offrir un bon équilibre entre fluidité et immersion.
+  </p>
+  <p>
+    Support et assistance<br />
+    Notre équipe est à votre disposition pour toute question ou problème. N’hésitez pas à nous contacter via la rubrique contact.
+  </p>
+  <p>
+    Un serveur Discord sera prochainement mis en place.
+  </p>
+  <p>
+	Le serveur est actuellement ouvert temporairement. Si la fréquentation est bonne et que tout se passe bien, nous envisagerons de l’ouvrir en accès 24/7.
+  </p>
+  <p>
+    Personnalisation avancée<br />
+    Découvrez des mods soigneusement sélectionnés pour améliorer le gameplay sans dénaturer l’expérience originale.
+  </p>
+</section>
+
+<section style="max-width: 960px; margin: 2rem auto; padding: 0 1rem;">
+  <h2 style="color: #7289da; text-align: center;">🎮 Règles du server</h2>
+  <p>
+    Pour garantir une bonne ambiance et des performances optimales, merci de respecter les règles suivantes :
+<p>
+  <strong>PvP autorisé (et même encouragé)</strong><br />
+  Le combat fait partie intégrante du jeu. Les attaques sont permises, que ce soit pour des ressources, des territoires ou par simple rivalité tactique.
+</p>
+<ul style="list-style-type: disc; padding-left: 1.5rem;">
+  <li><strong>Pas de harcèlement gratuit :</strong> Évitez de cibler constamment le même joueur ou de l’attaquer alors qu’il ne représente plus de menace. L’objectif est le fun, pas la frustration.</li>
+  <li><strong>Pas de spawnkill ni de camping abusif :</strong> Ne détruisez pas les vaisseaux ou bases dès leur apparition, laissez un minimum de marge pour riposter ou reconstruire.</li>
+  <li><strong>Respect des autres joueurs :</strong> Même dans un serveur orienté combat, la courtoisie reste de mise. Un GG après une bonne baston, ça coûte rien !</li>
+  <li>Évitez les constructions inutiles ou excessivement lourdes.</li>
+  <li>Pas de spam de messages.</li>
+  <li>Balises radio autorisées, à condition de ne pas en abuser (pas de spam inutile sur le HUD).</li>
+  <li>Utilisez des noms de vaisseaux et stations clairs pour éviter la confusion.</li>
+  <li>Respectez les autres joueurs, l'entraide est encouragée.</li>
+  <li>Les grids abandonnés depuis plusieurs jours peuvent éventuellement être supprimés automatiquement.</li>
+</ul>
+
+  <p>
+    Le non-respect de ces règles peut entraîner des sanctions ou un bannissement.
+  </p>
+  
+  <p>
+  Le mot de passe est susceptible d'être modifié. En cas de changement, n'hésitez pas à revenir sur ce site pour le consulter à nouveau.
+  </p>
+  <p>
+  🔐 Mot de passe actuel du serveur : Euro5782
+  </p>
+</section>
+
+
+<main>
+  <section>
+    <h2>⚙️ Configuration du serveur</h2>
+    <pre>
+Assembler Efficiency      10.0            Moins de gaspillage de ressources, sans être infini.
+Assembler Speed           10.0            Accélère un peu la production sans ruiner l’équilibre
+Block Inventory Size      100.0           Presque illimité
+Grinder Speed             10.0            Pas trop lent, pas instantané — bon compromis.
+Hacking Speed             0.5             Plus rapide, mais pas immédiat (encore un mini risque)
+Harvest Ratio Multiplier  2.0             Tu mines 2x plus de minerais → Moins de grind, mais tu mines quand même.
+Character Inventory Size  100.0           Tu peux transporter beaucoup quasiment illimité
+Refinery Speed            10.0            Tu n’attends pas des heures, mais tu ressens encore le besoin d’optimiser.
+Welder Speed              5.0             Tu construis vite, mais tu n’appuies pas juste une fois et c’est fini.
+
+"GLOBALLY" World CPU:       214783647	  i7-4790 3.60GHz - 4Ghz (turbo) hyper-threading, 8 threads 16 go Ram
+
+Débit descendant (Download)     : 	  475,57 Mbps (59,45 Mo/s)
+Débit montant (Upload) 		: 	  491,51 Mbps (61,44 Mo/s)
+Latence réseau (Ping) 		: 	  9 millisecondes (ms)
+
+Test de performance réseau effectué vers le serveur Orange France
+
+Disable autorespawn                       Te permet de choisir la base dans laquelle tu réapparais.
+
+Auto Save:                  30 Minutes
+Back Up Save:               48
+Auto Save Restore:          24H
+Mod:                        Survival
+Max Players:                10
+Optimal Respawn Distance:   50000
+
+Mods actifs: (mod.io)
+
+Mod de vitesse de Flare | Édition Conquête            755715
+Gamme de détecteurs de minerai 500 - 1000             1476518
+(Fixe) RB - Pack Piston (Petite et Grande Grille)     3903693
+Forets géants de Life'Tech et Rebels                  3712362
+Panneaux solaires de haute technologie                674742
+Ganymède Tech - Batterie                              1772577
+    </pre>
+  </section>
+
+  <section id="contact">
+    <h2>✉️ Contact</h2>
+    <form id="contactForm" autocomplete="off">
+      <input type="text" name="name" placeholder="Nom et/ou Pseudo XBOX" required />
+      <input type="email" name="email" placeholder="Adresse Email" required />
+      <textarea name="message" rows="5" placeholder="Message ..." required></textarea>
+
+      <label for="captchaAnswer">Résolvez le captcha pour envoyer votre message.</label>
+      <div style="text-align: center; margin-bottom: 0.5rem;">
+        (<span id="captchaNum1"></span> + <span id="captchaNum2"></span> ?)
+      </div>
+      <input
+        type="text"
+        id="captchaAnswer"
+        name="captchaAnswer"
+        placeholder="Réponse"
+        required
+        autocomplete="off"
+      />
+
+      <button type="submit">Envoyer</button>
+      <div id="alertMsg"></div>
+    </form>
+  </section>
+</main>
+
+<footer style="text-align: center; padding: 1rem; background-color: #111; color: #888;">
+  <p>&copy; 2025 Neon - Neurocity. Tous droits réservés. Le code source de ce site n'est pas libre de droits.</p>
+  <p>Site produit par &copy; Ridley HICKS &copy; Error Line Studio &amp; &copy; NOXDOG PRODUCTION</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const webhookURL = "https://discordapp.com/api/webhooks/1401691899521142927/IP5H0mXIxJRmKxlFTaqHWnWtikRY6lfNoQdJLhVkw8ukBaSRQ3C12KBLnPH2wFk4RrcZ";
+    const form = document.getElementById("contactForm");
+    const alertMsg = document.getElementById("alertMsg");
+    const submitBtn = form.querySelector("button[type='submit']");
+    const captchaNum1El = document.getElementById("captchaNum1");
+    const captchaNum2El = document.getElementById("captchaNum2");
+
+    const delayBetweenSends = 30000; // 30 secondes
+    let canSend = true;
+
+    let num1, num2;
+
+    function generateCaptcha() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      captchaNum1El.textContent = num1;
+      captchaNum2El.textContent = num2;
+    }
+
+    generateCaptcha();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!canSend) {
+        alertMsg.style.color = "#f08080";
+        alertMsg.textContent = "Merci d'attendre 30 secondes entre chaque message.";
+        return;
+      }
+
+      alertMsg.textContent = "";
+      alertMsg.style.color = "#8fbc8f";
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      const captchaAnswer = form.captchaAnswer.value.trim();
+
+      if (!name || !email || !message) {
+        alertMsg.style.color = "#f08080";
+        alertMsg.textContent = "Merci de remplir tous les champs !";
+        return;
+      }
+
+      if (parseInt(captchaAnswer, 10) !== num1 + num2) {
+        alertMsg.style.color = "#f08080";
+        alertMsg.textContent = "Réponse au captcha incorrecte.";
+        generateCaptcha();
+        form.captchaAnswer.value = "";
+        form.captchaAnswer.focus();
+        return;
+      }
+
+      canSend = false;
+      submitBtn.disabled = true;
+
+      const payload = {
+        content: null,
+        embeds: [
+          {
+            title: "Nouveau message depuis le formulaire Neon",
+            color: 3447003,
+            fields: [
+              { name: "Nom/Pseudo Xbox", value: name },
+              { name: "Email", value: email },
+              { name: "Message", value: message }
+            ],
+            timestamp: new Date().toISOString()
+          }
+        ]
+      };
+
+      try {
+        const response = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          alertMsg.style.color = "#8fbc8f";
+          alertMsg.textContent = "Message envoyé avec succès. Merci !";
+          form.reset();
+          generateCaptcha();
+
+          // Bloquer l'envoi pendant 30 secondes
+          setTimeout(() => {
+            canSend = true;
+            submitBtn.disabled = false;
+            alertMsg.textContent = "";
+          }, delayBetweenSends);
+        } else {
+          throw new Error("Erreur lors de l'envoi du message.");
+        }
+      } catch (error) {
+        alertMsg.style.color = "#f08080";
+        alertMsg.textContent = "Une erreur est survenue, veuillez réessayer plus tard.";
+        canSend = true;
+        submitBtn.disabled = false;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
